@@ -1,0 +1,27 @@
+// db/init.js
+const sqlite3 = require('sqlite3').verbose();
+const db = new sqlite3.Database('./db/database.db');
+
+db.serialize(() => {
+    // Create Supplier table
+    db.run(`CREATE TABLE IF NOT EXISTS Supplier (
+        SupplierID INTEGER PRIMARY KEY AUTOINCREMENT,
+        SupplierName TEXT NOT NULL,
+        SupplierContact TEXT
+    )`);
+
+    // Create Item table
+    db.run(`CREATE TABLE IF NOT EXISTS Item (
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        Name TEXT NOT NULL,
+        Description TEXT,
+        Category TEXT,
+        Price REAL NOT NULL,
+        Stock INTEGER NOT NULL,
+        DateAdded DATE,
+        SupplierID INTEGER,
+        FOREIGN KEY (SupplierID) REFERENCES Supplier(SupplierID)
+    )`);
+});
+
+db.close();

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h2 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td a {
+            margin-right: 10px;
+        }
+        form {
+            display: inline;
+        }
+        button[type="submit"] {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Suppliers</h2>
+        <a href="/suppliers/add">Add New Supplier</a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Replace this section with actual data -->
+                <tr>
+                    <td>1</td>
+                    <td>Supplier A</td>
+                    <td>Contact A</td>
+                    <td>
+                        <a href="/suppliers/edit/1">Edit</a>
+                        <form action="/suppliers/delete/1" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Supplier B</td>
+                    <td>Contact B</td>
+                    <td>
+                        <a href="/suppliers/edit/2">Edit</a>
+                        <form action="/suppliers/delete/2" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <!-- End of actual data -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

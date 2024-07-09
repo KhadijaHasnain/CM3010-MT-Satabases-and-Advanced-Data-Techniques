@@ -1,0 +1,13 @@
+<%- include('index') %>
+<div>
+    <h2>Add New Supplier</h2>
+    <form action="/suppliers/add" method="POST">
+        <label for="supplierName">Name:</label>
+        <input type="text" id="supplierName" name="supplierName" required>
+        
+        <label for="supplierContact">Contact:</label>
+        <input type="text" id="supplierContact" name="supplierContact">
+        
+        <button type="submit">Add Supplier</button>
+    </form>
+</div>

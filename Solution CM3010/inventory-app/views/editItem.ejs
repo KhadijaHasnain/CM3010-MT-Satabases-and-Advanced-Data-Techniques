@@ -1,0 +1,32 @@
+<%- include('index') %>
+<div>
+    <h2>Edit Item</h2>
+    <form action="/items/edit/<%= item.ID %>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= item.Name %>" required>
+        
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="<%= item.Description %>">
+        
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category" value="<%= item.Category %>">
+        
+        <label for="price">Price:</label>
+        <input type="number" step="0.01" id="price" name="price" value="<%= item.Price %>" required>
+        
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" value="<%= item.Stock %>" required>
+        
+        <label for="dateAdded">Date Added:</label>
+        <input type="date" id="dateAdded" name="dateAdded" value="<%= item.DateAdded %>">
+        
+        <label for="supplierID">Supplier:</label>
+        <select id="supplierID" name="supplierID">
+            <% suppliers.forEach(supplier => { %>
+                <option value="<%= supplier.SupplierID %>" <%= item.SupplierID == supplier.SupplierID ? 'selected' : '' %>><%= supplier.SupplierName %></option>
+            <% }) %>
+        </select>
+        
+        <button type="submit">Update Item</button>
+    </form>
+</div>

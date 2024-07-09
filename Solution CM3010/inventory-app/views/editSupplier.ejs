@@ -1,0 +1,13 @@
+<%- include('index') %>
+<div>
+    <h2>Edit Supplier</h2>
+    <form action="/suppliers/edit/<%= supplier.SupplierID %>" method="POST">
+        <label for="supplierName">Name:</label>
+        <input type="text" id="supplierName" name="supplierName" value="<%= supplier.SupplierName %>" required>
+        
+        <label for="supplierContact">Contact:</label>
+        <input type="text" id="supplierContact" name="supplierContact" value="<%= supplier.SupplierContact %>">
+        
+        <button type="submit">Update Supplier</button>
+    </form>
+</div>
